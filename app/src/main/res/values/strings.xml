@@ -4,4 +4,9 @@
     <string name="liked_by">Liked by</string>
     <string name="and">and</string>
     <string name="others">others</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="new_post">New post</string>
+    <string name="likes">Likes</string>
+    <string name="profile">Profile</string>
 </resources>

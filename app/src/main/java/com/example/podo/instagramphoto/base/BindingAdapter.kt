@@ -3,10 +3,13 @@ package com.example.podo.instagramphoto.base
 import android.graphics.Typeface
 import android.text.SpannableString
 import android.text.SpannableStringBuilder
+import android.text.TextUtils
 import android.text.style.ForegroundColorSpan
 import android.text.style.StyleSpan
 import android.widget.TextView
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.databinding.BindingAdapter
+import com.bumptech.glide.Glide
 import com.example.podo.instagramphoto.R
 
 
@@ -74,5 +77,16 @@ object BindingAdapter {
         )
         return spannableString
     }
+
+    @BindingAdapter(value = ["drawImage"], requireAll = false)
+    @JvmStatic
+    fun drawImage(view: AppCompatImageView, url: String?) {
+        var stringUrl = url
+        if (TextUtils.isEmpty(stringUrl)) stringUrl = null
+        Glide.with(view.context)
+            .load(stringUrl)
+            .into(view)
+    }
+
 
 }

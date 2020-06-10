@@ -23,23 +23,23 @@ class MainActivity : AppCompatActivity() {
             setOnNavigationItemSelectedListener {
                 when (it.itemId) {
                     R.id.navigation_home -> {
-                        Toast.makeText(context, "navigation_home", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, R.string.home, Toast.LENGTH_SHORT).show()
                         true
                     }
                     R.id.navigation_search -> {
-                        Toast.makeText(context, "navigation_search", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, R.string.search, Toast.LENGTH_SHORT).show()
                         true
                     }
                     R.id.navigation_add_photo -> {
-                        Toast.makeText(context, "navigation_add_photo", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, R.string.new_post, Toast.LENGTH_SHORT).show()
                         true
                     }
                     R.id.navigation_likes -> {
-                        Toast.makeText(context, "navigation_likes", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, R.string.likes, Toast.LENGTH_SHORT).show()
                         true
                     }
                     R.id.navigation_profile -> {
-                        Toast.makeText(context, "navigation_profile", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, R.string.profile, Toast.LENGTH_SHORT).show()
                         true
                     }
                     else -> false

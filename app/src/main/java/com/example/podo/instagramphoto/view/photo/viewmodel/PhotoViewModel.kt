@@ -16,7 +16,6 @@ class PhotoViewModel(val instagramRepo: InstagramRepo) : BaseViewModel() {
     fun fetchData(){
         viewModelScope.launch {
             _instagramPhotoData.value = instagramRepo.getInstagramPhotoData().instagramPhotoData
-            val x = 10
         }
     }
 }
