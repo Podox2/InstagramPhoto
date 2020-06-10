@@ -38,14 +38,28 @@ object BindingAdapter {
     @BindingAdapter("showLikes")
     @JvmStatic
     fun showLikes(view: TextView, likes: List<String>) {
+        if (likes.isEmpty()) {
+            view.text = view.context.getString(R.string.no_likes)
+            return
+        }
+
+        var usersCounter = 0
         val spannableStringBuilder = SpannableStringBuilder()
         spannableStringBuilder.append("${view.context.getString(R.string.liked_by)} ")
             .append(makeBoldText(likes[0]))
-            .append(" ")
-            .append(makeBoldText(likes[1]))
-            .append(" ${view.context.getString(R.string.and)} ")
-            .append(makeBoldText((likes.size - 2).toString()))
-            .append(" ${view.context.getString(R.string.others)}")
+        usersCounter++
+
+        if (likes.size > 1) {
+            spannableStringBuilder.append(", ")
+                .append(makeBoldText(likes[1]))
+            usersCounter++
+        }
+
+        if (usersCounter > 1) {
+            spannableStringBuilder.append(" ${view.context.getString(R.string.and)} ")
+                .append(makeBoldText((likes.size - usersCounter).toString()))
+                .append(" ${view.context.getString(R.string.others)}")
+        }
 
         view.text = spannableStringBuilder
     }
