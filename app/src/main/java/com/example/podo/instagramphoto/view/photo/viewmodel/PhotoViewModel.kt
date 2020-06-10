@@ -9,8 +9,8 @@ import com.example.podo.instagramphoto.data.repository.InstagramRepo
 import kotlinx.coroutines.launch
 
 class PhotoViewModel(val instagramRepo: InstagramRepo) : BaseViewModel() {
-    private val _instagramPhotoData = MutableLiveData<InstagramPhotoData>()
-    val instagramPhotoData: LiveData<InstagramPhotoData>
+    private val _instagramPhotoData = MutableLiveData<List<InstagramPhotoData>>()
+    val instagramPhotoData: LiveData<List<InstagramPhotoData>>
         get() = _instagramPhotoData
 
     fun fetchData(){

@@ -6,7 +6,7 @@ import com.example.podo.instagramphoto.databinding.ItemPhotoBinding
 import com.smarteist.autoimageslider.SliderViewAdapter
 
 
-class PhotoAdapter : SliderViewAdapter<PhotoAdapter.PhotoViewHolder>() {
+class PhotoSliderAdapter : SliderViewAdapter<PhotoSliderAdapter.PhotoViewHolder>() {
 
     private val topNewsList = mutableListOf<String>()
 

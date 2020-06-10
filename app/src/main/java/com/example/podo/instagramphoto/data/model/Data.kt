@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class InstagramPhotoModel(
     @SerializedName("data")
-    val instagramPhotoData: InstagramPhotoData
+    val instagramPhotoData: List<InstagramPhotoData>
 )
 
 data class InstagramPhotoData(

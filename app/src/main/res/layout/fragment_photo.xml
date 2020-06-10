@@ -58,152 +58,16 @@
             app:layout_constraintTop_toTopOf="@id/toolbar"
             app:srcCompat="@drawable/ic_send" />
 
-        <androidx.core.widget.NestedScrollView
-            android:layout_width="match_parent"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rec_view_photo_list"
+            android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintTop_toBottomOf="@+id/toolbar"
-            app:layout_constraintBottom_toBottomOf="parent">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:context=".view.photo.fragment.PhotoFragment">
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/image_avatar"
-                    android:layout_width="@dimen/avatar_width"
-                    android:layout_height="@dimen/avatar_height"
-                    android:layout_marginStart="@dimen/big_margin"
-                    android:layout_marginTop="@dimen/big_margin"
-                    app:drawImage="@{viewModel.instagramPhotoData.thumbnail}"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:src="@drawable/inst_ava" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tv_nickname"
-                    style="@style/BoldTextStyle"
-                    android:layout_marginStart="@dimen/big_margin"
-                    android:text="@{viewModel.instagramPhotoData.profile}"
-                    app:layout_constraintStart_toEndOf="@+id/image_avatar"
-                    app:layout_constraintTop_toTopOf="@+id/image_avatar"
-                    tools:text="milena_thebrowbar" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tv_place"
-                    style="@style/DefaultTextStyle"
-                    android:drawableEnd="@drawable/ic_arrow_forward"
-                    android:text="@{viewModel.instagramPhotoData.location}"
-                    app:layout_constraintBottom_toBottomOf="@+id/image_avatar"
-                    app:layout_constraintStart_toStartOf="@+id/tv_nickname"
-                    tools:text="The Brow Bar Kharkov" />
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/image_more"
-                    android:layout_width="@dimen/icon_width"
-                    android:layout_height="@dimen/icon_height"
-                    android:layout_marginEnd="@dimen/big_margin"
-                    android:tint="@android:color/black"
-                    app:layout_constraintBottom_toBottomOf="@id/image_avatar"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/image_avatar"
-                    app:srcCompat="@drawable/ic_dots" />
-
-                <com.smarteist.autoimageslider.SliderView
-                    android:id="@+id/image_slider"
-                    android:layout_width="match_parent"
-                    android:layout_height="400dp"
-                    android:layout_marginTop="@dimen/big_margin"
-                    app:sliderAnimationDuration="600"
-                    app:sliderIndicatorAnimationDuration="600"
-                    app:sliderIndicatorGravity="center_horizontal|bottom"
-                    app:sliderIndicatorOrientation="horizontal"
-                    app:sliderIndicatorPadding="2dp"
-                    app:sliderIndicatorRadius="1.8dp"
-                    app:sliderIndicatorSelectedColor="@color/colorBlue"
-                    app:sliderIndicatorUnselectedColor="@color/colorGray"
-                    app:sliderScrollTimeInSec="1"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/image_avatar"
-                    app:layout_constraintBottom_toTopOf="@+id/image_like"/>
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/image_like"
-                    android:layout_width="@dimen/icon_width"
-                    android:layout_height="@dimen/icon_height"
-                    android:layout_marginStart="@dimen/big_margin"
-                    android:layout_marginTop="@dimen/big_margin"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/image_slider"
-                    app:srcCompat="@drawable/ic_heart" />
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/image_comments"
-                    android:layout_width="@dimen/icon_width"
-                    android:layout_height="@dimen/icon_height"
-                    android:layout_marginStart="@dimen/large_margin"
-                    app:layout_constraintBottom_toBottomOf="@id/image_like"
-                    app:layout_constraintStart_toEndOf="@id/image_like"
-                    app:layout_constraintTop_toTopOf="@+id/image_like"
-                    app:srcCompat="@drawable/ic_comment" />
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/image_send"
-                    android:layout_width="@dimen/icon_width"
-                    android:layout_height="@dimen/icon_height"
-                    android:layout_marginStart="@dimen/large_margin"
-                    android:tint="@android:color/black"
-                    app:layout_constraintBottom_toBottomOf="@id/image_like"
-                    app:layout_constraintStart_toEndOf="@id/image_comments"
-                    app:layout_constraintTop_toTopOf="@+id/image_like"
-                    app:srcCompat="@drawable/ic_send" />
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/image_bookmark"
-                    android:layout_width="@dimen/icon_width"
-                    android:layout_height="@dimen/icon_height"
-                    android:layout_marginEnd="@dimen/big_margin"
-                    android:tint="@android:color/black"
-                    app:layout_constraintBottom_toBottomOf="@id/image_like"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/image_like"
-                    app:srcCompat="@drawable/ic_bookmark" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tv_likes"
-                    style="@style/DefaultTextStyle"
-                    android:layout_marginTop="@dimen/big_margin"
-                    app:showLikes="@{viewModel.instagramPhotoData.likes}"
-                    app:layout_constraintEnd_toEndOf="@id/image_bookmark"
-                    app:layout_constraintStart_toStartOf="@id/image_like"
-                    app:layout_constraintTop_toBottomOf="@id/image_like"
-                    tools:text="Liked by milena_trump, lenak_taranets_tensnailkitchen and 94 others" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tv_comment"
-                    style="@style/DefaultTextStyle"
-                    android:layout_marginTop="@dimen/big_margin"
-                    app:showHighlightText="@{viewModel.instagramPhotoData.description}"
-                    app:layout_constraintEnd_toEndOf="@id/tv_likes"
-                    app:layout_constraintStart_toStartOf="@id/tv_likes"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_likes"
-                    tools:text="milena_browar Beauty @anna_zavadskaya @covernumberone" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tv_time"
-                    style="@style/GrayTextStyle"
-                    android:layout_marginTop="@dimen/big_margin"
-                    android:text="@{viewModel.instagramPhotoData.date}"
-                    app:layout_constraintStart_toStartOf="@id/tv_comment"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_comment"
-                    tools:text="3 hours ago" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.core.widget.NestedScrollView>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:listitem="@layout/item_photo_data"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
