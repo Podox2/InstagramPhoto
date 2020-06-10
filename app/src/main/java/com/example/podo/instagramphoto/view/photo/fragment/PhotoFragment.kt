@@ -11,7 +11,8 @@ import com.example.podo.instagramphoto.view.photo.adapter.PhotoSliderAdapter
 import com.example.podo.instagramphoto.view.photo.viewmodel.PhotoViewModel
 import kotlin.reflect.KClass
 
-class PhotoFragment : BaseVMFragment<PhotoViewModel, FragmentPhotoBinding>() {
+class PhotoFragment : BaseVMFragment<PhotoViewModel, FragmentPhotoBinding>(),
+    PhotoListAdapter.DefaultOnClickListener {
 
     override fun getViewModelClass(): KClass<PhotoViewModel> = PhotoViewModel::class
 
@@ -19,6 +20,11 @@ class PhotoFragment : BaseVMFragment<PhotoViewModel, FragmentPhotoBinding>() {
         get() = R.layout.fragment_photo
 
     private val photoListAdapter = PhotoListAdapter()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        photoListAdapter.defaultOnClickListener = this
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -28,6 +34,16 @@ class PhotoFragment : BaseVMFragment<PhotoViewModel, FragmentPhotoBinding>() {
             photoListAdapter.submitList(it)
         })
 
-        binding.recViewPhotoList.adapter = photoListAdapter
+        binding.apply {
+            recViewPhotoList.adapter = photoListAdapter
+            imageCamera.setOnClickListener {
+                toast("Add post")
+            }
+            imageSendMessage.setOnClickListener {
+                toast("Show Direct Messages")
+            }
+        }
     }
+
+    override fun onViewClicked(view: String) = toast(view)
 }

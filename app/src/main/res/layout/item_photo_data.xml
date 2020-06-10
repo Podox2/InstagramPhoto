@@ -36,7 +36,7 @@
             tools:text="milena_thebrowbar" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tv_place"
+            android:id="@+id/tv_location"
             style="@style/DefaultTextStyle"
             android:drawableEnd="@drawable/ic_arrow_forward"
             android:text="@{item.location}"

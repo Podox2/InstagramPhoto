@@ -33,15 +33,12 @@
             app:layout_constraintTop_toTopOf="@id/toolbar"
             app:srcCompat="@drawable/ic_camera" />
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tv_instagram"
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_instagram_logo"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="55dp"
             android:elevation="4dp"
-            android:text="Instagram"
-            android:textColor="@android:color/black"
-            android:textSize="32sp"
-            android:textStyle="italic"
+            android:src="@drawable/inst_logo"
             app:layout_constraintBottom_toBottomOf="@id/toolbar"
             app:layout_constraintEnd_toEndOf="@id/toolbar"
             app:layout_constraintStart_toStartOf="@id/toolbar"
