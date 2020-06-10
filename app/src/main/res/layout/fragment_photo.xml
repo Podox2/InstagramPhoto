@@ -3,6 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.podo.instagramphoto.view.photo.viewmodel.PhotoViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -80,7 +86,7 @@
                     android:id="@+id/tv_nickname"
                     style="@style/BoldTextStyle"
                     android:layout_marginStart="@dimen/big_margin"
-                    android:text="milena_thebrowbar"
+                    android:text="@{viewModel.instagramPhotoData.profile}"
                     app:layout_constraintStart_toEndOf="@+id/image_avatar"
                     app:layout_constraintTop_toTopOf="@+id/image_avatar"
                     tools:text="milena_thebrowbar" />
@@ -89,7 +95,7 @@
                     android:id="@+id/tv_place"
                     style="@style/DefaultTextStyle"
                     android:drawableEnd="@drawable/ic_arrow_forward"
-                    android:text="The Brow Bar Kharkov"
+                    android:text="@{viewModel.instagramPhotoData.location}"
                     app:layout_constraintBottom_toBottomOf="@+id/image_avatar"
                     app:layout_constraintStart_toStartOf="@+id/tv_nickname"
                     tools:text="The Brow Bar Kharkov" />
@@ -163,7 +169,7 @@
                     android:id="@+id/tv_likes"
                     style="@style/DefaultTextStyle"
                     android:layout_marginTop="@dimen/big_margin"
-                    android:text="Liked by milena_trump, lenak_taranets_tensnailkitchen and 94 others"
+                    app:showLikes="@{viewModel.instagramPhotoData.likes}"
                     app:layout_constraintEnd_toEndOf="@id/image_bookmark"
                     app:layout_constraintStart_toStartOf="@id/image_like"
                     app:layout_constraintTop_toBottomOf="@id/image_like"
@@ -173,7 +179,7 @@
                     android:id="@+id/tv_comment"
                     style="@style/DefaultTextStyle"
                     android:layout_marginTop="@dimen/big_margin"
-                    android:text="milena_browar Beauty @anna_zavadskaya @covernumberone"
+                    app:showHighlightText="@{viewModel.instagramPhotoData.description}"
                     app:layout_constraintEnd_toEndOf="@id/tv_likes"
                     app:layout_constraintStart_toStartOf="@id/tv_likes"
                     app:layout_constraintTop_toBottomOf="@+id/tv_likes"
@@ -183,7 +189,7 @@
                     android:id="@+id/tv_time"
                     style="@style/GrayTextStyle"
                     android:layout_marginTop="@dimen/big_margin"
-                    android:text="3 hours ago"
+                    android:text="@{viewModel.instagramPhotoData.date}"
                     app:layout_constraintStart_toStartOf="@id/tv_comment"
                     app:layout_constraintTop_toBottomOf="@+id/tv_comment"
                     tools:text="3 hours ago" />

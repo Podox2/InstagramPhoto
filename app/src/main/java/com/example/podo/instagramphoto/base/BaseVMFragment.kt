@@ -25,6 +25,6 @@ abstract class BaseVMFragment<VM: ViewModel, DB: ViewDataBinding>: BaseFragment<
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply { this.lifecycleOwner = this@BaseVMFragment }
-        //binding.setVariable(BR.viewModel, viewModel)
+        binding.setVariable(BR.viewModel, viewModel)
     }
 }

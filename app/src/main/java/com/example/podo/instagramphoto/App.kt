@@ -1,6 +1,8 @@
 package com.example.podo.instagramphoto
 
 import android.app.Application
+import com.example.podo.instagramphoto.di.repositoryModule
+import com.example.podo.instagramphoto.di.serviceModule
 import com.example.podo.instagramphoto.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
@@ -11,7 +13,7 @@ class App : Application() {
         super.onCreate()
         startKoin {
             androidContext(applicationContext)
-            modules(listOf(viewModelModule))
+            modules(listOf(viewModelModule, serviceModule, repositoryModule))
         }
     }
 
