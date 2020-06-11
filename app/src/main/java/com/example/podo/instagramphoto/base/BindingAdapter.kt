@@ -85,6 +85,7 @@ object BindingAdapter {
         if (TextUtils.isEmpty(stringUrl)) stringUrl = null
         Glide.with(view.context)
             .load(stringUrl)
+            .placeholder(R.drawable.ic_image_placeholder)
             .into(view)
     }
 
