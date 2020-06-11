@@ -88,5 +88,4 @@ object BindingAdapter {
             .into(view)
     }
 
-
 }

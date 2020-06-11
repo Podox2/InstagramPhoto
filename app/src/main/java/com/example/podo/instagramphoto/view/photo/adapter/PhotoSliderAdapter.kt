@@ -8,11 +8,11 @@ import com.smarteist.autoimageslider.SliderViewAdapter
 
 class PhotoSliderAdapter : SliderViewAdapter<PhotoSliderAdapter.PhotoViewHolder>() {
 
-    private val topNewsList = mutableListOf<String>()
+    private val photosList = mutableListOf<String>()
 
     fun setItems(list: List<String>) {
-        topNewsList.clear()
-        topNewsList.addAll(list)
+        photosList.clear()
+        photosList.addAll(list)
         notifyDataSetChanged()
     }
 
@@ -23,12 +23,12 @@ class PhotoSliderAdapter : SliderViewAdapter<PhotoSliderAdapter.PhotoViewHolder>
 
     override fun onBindViewHolder(viewHolder: PhotoViewHolder?, position: Int) {
         viewHolder!!.binding.apply {
-            item = topNewsList[position]
+            item = photosList[position]
             executePendingBindings()
         }
     }
 
-    override fun getCount(): Int = topNewsList.size
+    override fun getCount(): Int = photosList.size
 
 
     class PhotoViewHolder(val binding: ItemPhotoBinding) : ViewHolder(binding.root)

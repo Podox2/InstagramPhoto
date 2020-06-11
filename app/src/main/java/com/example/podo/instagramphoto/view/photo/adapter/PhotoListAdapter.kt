@@ -5,25 +5,26 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
+import com.example.podo.instagramphoto.R
 import com.example.podo.instagramphoto.base.BaseViewHolder
-import com.example.podo.instagramphoto.data.model.InstagramPhotoData
+import com.example.podo.instagramphoto.data.model.InstagramPhotoModel
 import com.example.podo.instagramphoto.databinding.ItemPhotoDataBinding
 
 class PhotoListAdapter :
-    ListAdapter<InstagramPhotoData, BaseViewHolder<ItemPhotoDataBinding>>(PhotoDiffCallback) {
+    ListAdapter<InstagramPhotoModel, BaseViewHolder<ItemPhotoDataBinding>>(PhotoDiffCallback) {
 
-    companion object PhotoDiffCallback : DiffUtil.ItemCallback<InstagramPhotoData>() {
+    companion object PhotoDiffCallback : DiffUtil.ItemCallback<InstagramPhotoModel>() {
         override fun areItemsTheSame(
-            oldItem: InstagramPhotoData,
-            newItem: InstagramPhotoData
+            oldItem: InstagramPhotoModel,
+            newItem: InstagramPhotoModel
         ): Boolean {
             return oldItem === newItem
         }
 
         @SuppressLint("DiffUtilEquals")
         override fun areContentsTheSame(
-            oldItem: InstagramPhotoData,
-            newItem: InstagramPhotoData
+            oldItem: InstagramPhotoModel,
+            newItem: InstagramPhotoModel
         ): Boolean {
             return oldItem == newItem
         }
@@ -48,34 +49,35 @@ class PhotoListAdapter :
     override fun onBindViewHolder(holder: BaseViewHolder<ItemPhotoDataBinding>, position: Int) {
 
         val photoSliderAdapter = PhotoSliderAdapter()
+        val context = holder.binding.imageAvatar.context
 
         holder.binding.apply {
             item = getItem(position)
             photoSliderAdapter.setItems(getItem(position).images)
             imageSlider.setSliderAdapter(photoSliderAdapter)
             imageAvatar.setOnClickListener {
-                defaultOnClickListener.onViewClicked("User's Profile Picture")
+                defaultOnClickListener.onViewClicked(context.getString(R.string.users_profile_picture))
             }
             tvNickname.setOnClickListener {
-                defaultOnClickListener.onViewClicked("User's Nickname")
+                defaultOnClickListener.onViewClicked(context.getString(R.string.users_nickname))
             }
             tvLocation.setOnClickListener {
-                defaultOnClickListener.onViewClicked("Location")
+                defaultOnClickListener.onViewClicked(context.getString(R.string.location))
             }
             imageMore.setOnClickListener {
-                defaultOnClickListener.onViewClicked("Options")
+                defaultOnClickListener.onViewClicked(context.getString(R.string.options))
             }
             imageLike.setOnClickListener {
-                defaultOnClickListener.onViewClicked("Like post")
+                defaultOnClickListener.onViewClicked(context.getString(R.string.like_post))
             }
             imageComments.setOnClickListener {
-                defaultOnClickListener.onViewClicked("Show comments")
+                defaultOnClickListener.onViewClicked(context.getString(R.string.show_comments))
             }
             imageSend.setOnClickListener {
-                defaultOnClickListener.onViewClicked("Share post")
+                defaultOnClickListener.onViewClicked(context.getString(R.string.share_post))
             }
             imageBookmark.setOnClickListener {
-                defaultOnClickListener.onViewClicked("Add to bookmarks")
+                defaultOnClickListener.onViewClicked(context.getString(R.string.add_to_bookmarks))
             }
             executePendingBindings()
         }

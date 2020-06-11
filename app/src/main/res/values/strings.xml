@@ -9,4 +9,14 @@
     <string name="new_post">New post</string>
     <string name="likes">Likes</string>
     <string name="profile">Profile</string>
+    <string name="add_post">Add post</string>
+    <string name="show_direct_messages">Show Direct Messages</string>
+    <string name="users_profile_picture">User\'s Profile Picture</string>
+    <string name="users_nickname">User\'s Nickname</string>
+    <string name="location">Location</string>
+    <string name="options">Options</string>
+    <string name="like_post">Like post</string>
+    <string name="show_comments">Show comments</string>
+    <string name="share_post">Share post</string>
+    <string name="add_to_bookmarks">Add to bookmarks</string>
 </resources>

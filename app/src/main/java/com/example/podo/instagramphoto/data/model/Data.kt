@@ -2,12 +2,12 @@ package com.example.podo.instagramphoto.data.model
 
 import com.google.gson.annotations.SerializedName
 
-data class InstagramPhotoModel(
+data class InstagramPhotoData(
     @SerializedName("data")
-    val instagramPhotoData: List<InstagramPhotoData>
+    val instagramPhotoModelList: List<InstagramPhotoModel>
 )
 
-data class InstagramPhotoData(
+data class InstagramPhotoModel(
     val profile: String,
     val location: String,
     val images: List<String>,

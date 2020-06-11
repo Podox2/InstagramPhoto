@@ -7,7 +7,6 @@ import com.example.podo.instagramphoto.R
 import com.example.podo.instagramphoto.base.BaseVMFragment
 import com.example.podo.instagramphoto.databinding.FragmentPhotoBinding
 import com.example.podo.instagramphoto.view.photo.adapter.PhotoListAdapter
-import com.example.podo.instagramphoto.view.photo.adapter.PhotoSliderAdapter
 import com.example.podo.instagramphoto.view.photo.viewmodel.PhotoViewModel
 import kotlin.reflect.KClass
 
@@ -30,17 +29,17 @@ class PhotoFragment : BaseVMFragment<PhotoViewModel, FragmentPhotoBinding>(),
         super.onViewCreated(view, savedInstanceState)
         viewModel.fetchData()
 
-        viewModel.instagramPhotoData.observe(viewLifecycleOwner, Observer {
+        viewModel.instagramPhotoList.observe(viewLifecycleOwner, Observer {
             photoListAdapter.submitList(it)
         })
 
         binding.apply {
             recViewPhotoList.adapter = photoListAdapter
             imageCamera.setOnClickListener {
-                toast("Add post")
+                toast(getString(R.string.add_post))
             }
             imageSendMessage.setOnClickListener {
-                toast("Show Direct Messages")
+                toast(getString(R.string.show_direct_messages))
             }
         }
     }

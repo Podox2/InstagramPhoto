@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">InstagramPhoto</string>
+    <string name="no_likes">Немає вподобань</string>
+    <string name="liked_by">Вподобали</string>
+    <string name="and">та</string>
+    <string name="others">інших</string>
+    <string name="home">Домашній екран</string>
+    <string name="search">Пошук</string>
+    <string name="new_post">Новий пост</string>
+    <string name="likes">Вподобання</string>
+    <string name="profile">Профіль</string>
+    <string name="add_post">Додати пост</string>
+    <string name="show_direct_messages">Показати приватні повідомлення</string>
+    <string name="users_profile_picture">Аватар користувача</string>
+    <string name="users_nickname">Нікнейм користувача</string>
+    <string name="location">Локація</string>
+    <string name="options">Опції</string>
+    <string name="like_post">Вподобати пост</string>
+    <string name="show_comments">Показати коментарі</string>
+    <string name="share_post">Поділитись постом</string>
+    <string name="add_to_bookmarks">Додати в закладки</string>
+</resources>

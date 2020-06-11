@@ -4,18 +4,18 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.podo.instagramphoto.base.BaseViewModel
-import com.example.podo.instagramphoto.data.model.InstagramPhotoData
+import com.example.podo.instagramphoto.data.model.InstagramPhotoModel
 import com.example.podo.instagramphoto.data.repository.InstagramRepo
 import kotlinx.coroutines.launch
 
 class PhotoViewModel(val instagramRepo: InstagramRepo) : BaseViewModel() {
-    private val _instagramPhotoData = MutableLiveData<List<InstagramPhotoData>>()
-    val instagramPhotoData: LiveData<List<InstagramPhotoData>>
-        get() = _instagramPhotoData
+    private val _instagramPhotoList = MutableLiveData<List<InstagramPhotoModel>>()
+    val instagramPhotoList: LiveData<List<InstagramPhotoModel>>
+        get() = _instagramPhotoList
 
     fun fetchData(){
         viewModelScope.launch {
-            _instagramPhotoData.value = instagramRepo.getInstagramPhotoData().instagramPhotoData
+            _instagramPhotoList.value = instagramRepo.getInstagramPhotoData().instagramPhotoModelList
         }
     }
 }

@@ -1,7 +1,7 @@
 package com.example.podo.instagramphoto.data.service
 
 import android.content.Context
-import com.example.podo.instagramphoto.data.model.InstagramPhotoModel
+import com.example.podo.instagramphoto.data.model.InstagramPhotoData
 import com.google.gson.Gson
 import java.io.IOException
 import java.io.InputStream
@@ -13,10 +13,10 @@ class LocalServiceImpl(private val context: Context) : LocalService {
         const val JSON_FILE = "inst.json"
     }
 
-    override fun getInstagramDataFromJson(): InstagramPhotoModel {
+    override fun getInstagramDataFromJson(): InstagramPhotoData {
         val jsonFileString = getJsonFromAssets(context, JSON_FILE)
-        val instagramModel: InstagramPhotoModel =
-            Gson().fromJson(jsonFileString, InstagramPhotoModel::class.java)
+        val instagramModel: InstagramPhotoData =
+            Gson().fromJson(jsonFileString, InstagramPhotoData::class.java)
         return instagramModel
     }
 

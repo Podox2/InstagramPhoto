@@ -7,7 +7,7 @@
     <data>
         <variable
             name="item"
-            type="com.example.podo.instagramphoto.data.model.InstagramPhotoData" />
+            type="com.example.podo.instagramphoto.data.model.InstagramPhotoModel" />
     </data>
 
 
