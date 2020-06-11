@@ -2,7 +2,6 @@ package com.example.podo.instagramphoto.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.example.podo.instagramphoto.R
